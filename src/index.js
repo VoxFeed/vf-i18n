@@ -1,6 +1,7 @@
 const {isArray, isPlainObject} = require('lodash');
 const buildIntl = require('./build-intl');
 const getDate = require('./get-date');
+const getDateTime = require('./get-datetime');
 const getDuration = require('./get-duration');
 const getMoney = require('./get-money');
 const getNumber = require('./get-number');
@@ -29,6 +30,10 @@ const VFi18n = class {
 
   getDate(...args) {
     return getDate.call(this, ...args);
+  }
+
+  getDateTime(...args) {
+    return getDateTime.call(this, ...args);
   }
 
   getDuration(...args) {

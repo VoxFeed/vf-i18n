@@ -15,6 +15,18 @@ describe('i18n.getDate', () => {
     expect(string2).to.be.equal('10/14/2017');
   });
 
+  it('should implement medium format', () => {
+    const format = 'medium';
+    const timezone = 'UTC';
+    const date = moment('2017-10-14T00:00:00.000Z').tz(timezone).toDate();
+
+    const string1 = i18n.getDate('es', date, format, timezone);
+    expect(string1).to.be.equal('14 de oct. de 2017');
+
+    const string2 = i18n.getDate('en', date, format, timezone);
+    expect(string2).to.be.equal('Oct 14, 2017');
+  });
+
   it('should implement long format', () => {
     const format = 'long';
     const timezone = 'UTC';

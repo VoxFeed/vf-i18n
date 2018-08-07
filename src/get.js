@@ -16,14 +16,15 @@ function get(locale, key, data) {
 
     if (!isNil(value)) return value;
 
-    if (onMissingString) onMissingString({locale, key});
-
     const fallbackValue = fallbackLocales.reduce((response, fbLocale) => {
       if (!isNil(response)) return response;
       return getValue(fbLocale, key, data);
     }, null);
 
-    return fallbackValue || DEFAULT_STRING;
+    if (!isNil(fallbackValue)) return fallbackValue;
+
+    onMissingString({locale, key});
+    return DEFAULT_STRING;
   };
 
   const getValue = (locale, key, data) => {

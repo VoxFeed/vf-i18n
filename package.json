@@ -1,6 +1,6 @@
 {
   "name": "vf-i18n",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "i18n utilities",
   "main": "src/index.js",
   "scripts": {

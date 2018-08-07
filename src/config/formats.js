@@ -1,6 +1,13 @@
 const DATE_FORMATS = {
   short: 'L',
-  medium: 'LL',
+  medium: 'll',
+  long: 'LL',
+  full: 'LLLL'
+};
+
+const DATETIME_FORMATS = {
+  short: 'L LT',
+  medium: 'lll',
   long: 'LLL',
   full: 'LLLL'
 };
@@ -14,5 +21,6 @@ const TIME_FORMATS = {
 
 module.exports = {
   DATE_FORMATS,
+  DATETIME_FORMATS,
   TIME_FORMATS
 };
