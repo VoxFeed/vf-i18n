@@ -1,7 +1,7 @@
 {
   "name": "vf-i18n",
   "version": "1.1.1",
-  "description": "i18n utilities",
+  "description": "Internationalization utilities used in VoxFeed",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test/index.js test/unit -b && mocha test/index.js test/integration -b"
@@ -11,6 +11,14 @@
     "voxfeed",
     "internationalization"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VoxFeed/vf-i18n.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VoxFeed/vf-i18n/issues"
+  },
+  "homepage": "https://github.com/VoxFeed/vf-i18n#readme",
   "author": "VoxFeed, Inc.",
   "license": "MIT",
   "dependencies": {
