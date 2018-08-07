@@ -1,5 +1,7 @@
 const MessageFormat = require('messageformat');
-const {get: getProperty, isNil, isString} = require('lodash');
+const isNil = require('lodash.isnil');
+const getProperty = require('lodash.get');
+const isString = require('lodash.isstring');
 const getDate = require('./get-date');
 const getMoney = require('./get-money');
 const getNumber = require('./get-number');

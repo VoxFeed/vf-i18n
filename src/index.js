@@ -1,4 +1,4 @@
-const {isArray, isPlainObject} = require('lodash');
+const isPlainObject = require('lodash.isplainobject');
 const buildIntl = require('./build-intl');
 const getDate = require('./get-date');
 const getDateTime = require('./get-datetime');
@@ -70,5 +70,5 @@ function getValidLocales(strings = {}) {
 function validateParameters(params) {
   const {strings, fallbackLocales} = params;
   if (strings && !isPlainObject(strings)) throw new Error(`Parameter "strings" must be a plain object. Got: ${strings}`);
-  if (fallbackLocales && !isArray(fallbackLocales)) throw new Error(`Parameter "fallbackLocales" must be an array. Got: ${fallbackLocales}`);
+  if (fallbackLocales && !Array.isArray(fallbackLocales)) throw new Error(`Parameter "fallbackLocales" must be an array. Got: ${fallbackLocales}`);
 }

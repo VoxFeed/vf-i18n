@@ -1,6 +1,9 @@
 # VF i18n
 
-i18n utilities for [VoxFeed](https://voxfeed.com)
+![](https://img.shields.io/badge/node-%3E%3D%208.0.0-green.svg?style=flat)
+![](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)
+
+Internationalization utilities used in [VoxFeed](https://voxfeed.com).
 
 ## Install
 
@@ -27,9 +30,9 @@ Optionally you can pass the following parameters to the constructor:
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`strings`|Object|An object containing all the translations available, grouped by each supported locale.|
-|`onMissingString`|Function|A function that is called everytime a requested translation is not available in `strings` for a given `locale`. An object with `locale` and `key` is passed on each call.|
-|`fallbackLocales`|Array[String]|If a translation is not available in a specific `locale`, then if `fallbackLocales` are specified the library will try to find a translation in one of those locales (from first to last). First translation available is returned.|
+| `strings` | Object | An object containing all the translations available, grouped by each supported locale. |
+| `onMissingString` | Function | A function that is called everytime a requested translation is not available in `strings` for a given `locale`. An object with `locale` and `key` is passed on each call. |
+| `fallbackLocales` | Array[String] | If a translation is not available in a specific `locale`, then if `fallbackLocales` are specified the library will try to find a translation in one of those locales (from first to last). First translation available is returned. |
 
 *Example:*
 ```javascript
@@ -85,9 +88,9 @@ Returns a translation string for a given `locale` and `key` combination. It uses
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`key`|String|*Required.* The key identifying the string to be translated.|
-|`data`|Object|Options and variables to be passed to the formatter.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `key` | String | *Required.* The key identifying the string to be translated. |
+| `data` | Object | Options and variables to be passed to the formatter. |
 
 *Examples:*
 ```javascript
@@ -102,18 +105,19 @@ Returns a localized date string. It uses [Moment Localized formats](https://mome
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`date`|Date|*Required.* The date to be formatted.|
-|`format`|String|*Required.* The style used to format the date string. Available formats are: `short`, `medium`, `long` and `full`.|
-|`timezone`|String|Time zone name, used to convert the date prior to formatting. Defaults to UTC.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `date` | Date | *Required.* The date to be formatted. |
+| `format` | String | *Required.* The style used to format the date string. Available formats are: `short`, `medium`, `long` and `full`. |
+| `timezone` | String | Time zone name, used to convert the date prior to formatting. Defaults to UTC. |
 
 *Formats:*
+
 | Format | Moment Format | Example |
 | ------ | ------------- | ------- |
-|`short`|`L`|10/14/2017|
-|`medium`|`ll`|Oct 14, 2017|
-|`long`|`LL`|October 14, 2017|
-|`full`|`LLLL`|Saturday, October 14, 2017|
+| `short` | `L` | 10/14/2017 |
+| `medium` | `ll` | Oct 14, 2017 |
+| `long` | `LL` | October 14, 2017 |
+| `full` | `LLLL` | Saturday, October 14, 2017 |
 
 *Examples:*
 ```javascript
@@ -130,18 +134,19 @@ Returns a localized time string. It uses [Moment Localized formats](https://mome
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`date`|Date|*Required.* The date to be formatted (only time is used).|
-|`format`|String|*Required.* The style used to format the time. Available formats are: `short`, `medium`, `long` and `full`.|
-|`timezone`|String|Time zone name, used to convert the time prior to formatting. Defaults to UTC.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `date` | Date | *Required.* The date to be formatted (only time is used). |
+| `format` | String | *Required.* The style used to format the time. Available formats are: `short`, `medium`, `long` and `full`. |
+| `timezone` | String | Time zone name, used to convert the time prior to formatting. Defaults to UTC. |
 
 *Formats:*
+
 | Format | Moment Format | Example |
 | ------ | ------------- | ------- |
-|`short`|`LT`|6:30 PM|
-|`medium`|`LTS`|6:30:05 PM|
-|`long`|`LTS`|6:30:05 PM|
-|`full`|`LTS z`|6:30:05 PM CDT|
+| `short` | `LT` | 6:30 PM |
+| `medium` | `LTS` | 6:30:05 PM |
+| `long` | `LTS` | 6:30:05 PM |
+| `full` | `LTS z` | 6:30:05 PM CDT |
 
 *Examples:*
 ```javascript
@@ -158,18 +163,19 @@ Returns a localized date-time string. It uses [Moment Localized formats](https:/
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`date`|Date|*Required.* The date-time to be formatted.|
-|`format`|String|*Required.* The style used to format the date-time. Available formats are: `short`, `medium`, `long` and `full`.|
-|`timezone`|String|Time zone name, used to convert the date-time prior to formatting. Defaults to UTC.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `date` | Date | *Required.* The date-time to be formatted. |
+| `format` | String | *Required.* The style used to format the date-time. Available formats are: `short`, `medium`, `long` and `full`. |
+| `timezone` | String | Time zone name, used to convert the date-time prior to formatting. Defaults to UTC. |
 
 *Formats:*
+
 | Format | Moment Format | Example |
 | ------ | ------------- | ------- |
-|`short`|`L LT`|10/14/2017 6:30 PM|
-|`medium`|`lll`|Oct 14, 2017 6:30 PM|
-|`long`|`LLL`|October 14, 2017 6:30 PM|
-|`full`|`LLLL`|Sunday, October 15, 2017 3:30 AM|
+| `short` | `L LT` | 10/14/2017 6:30 PM |
+| `medium` | `lll` | Oct 14, 2017 6:30 PM |
+| `long` | `LLL` | October 14, 2017 6:30 PM |
+| `full` | `LLLL` | Sunday, October 15, 2017 3:30 AM |
 
 *Examples:*
 ```javascript
@@ -186,8 +192,8 @@ For a given time duration in milliseconds, returns a human-readable localized st
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`duration`|Integer|*Required.* Time duration in milliseconds.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `duration` | Integer | *Required.* Time duration in milliseconds. |
 
 *Examples:*
 ```javascript
@@ -204,11 +210,11 @@ For a given date, returns the distance in time from now (or other specific date)
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`date`|Date|*Required.* The first date to calculate the distance in time.|
-|`style`|String|Formatting style. Available styles are: `best fit` and `numeric` ([see more](https://github.com/yahoo/intl-relativeformat#style)). Defaults to `best fit`.|
-|`units`|String|Whether to force the string to use a specific time unit. Available units are: `second`, `second-short`, `minute`, `minute-short`, `hour`, `hour-short`, `day`, `day-short`, `month`, `month-short`, `year` and `year-short` ([see more](https://github.com/yahoo/intl-relativeformat#units)).|
-|`fromDate`|Date|The second date to calculate the distance in time. Defaults to `new Date()`.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `date` | Date | *Required.* The first date to calculate the distance in time. |
+| `style` | String | Formatting style. Available styles are: `best fit` and `numeric` ([see more](https://github.com/yahoo/intl-relativeformat#style)). Defaults to `best fit`. |
+| `units` | String | Whether to force the string to use a specific time unit. Available units are: `second`, `second-short`, `minute`, `minute-short`, `hour`, `hour-short`, `day`, `day-short`, `month`, `month-short`, `year` and `year-short` ([see more](https://github.com/yahoo/intl-relativeformat#units)). |
+| `fromDate` | Date | The second date to calculate the distance in time. Defaults to `new Date()`. |
 
 *Examples:*
 ```javascript
@@ -228,9 +234,9 @@ Returns a human-readable localized string for the duration between 2 dates. It u
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`date`|Date|*Required.* The first date to calculate the duration.|
-|`fromDate`|Date|The second date to calculate the duration. Defaults to `new Date()`.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `date` | Date | *Required.* The first date to calculate the duration. |
+| `fromDate` | Date | The second date to calculate the duration. Defaults to `new Date()`. |
 
 *Examples:*
 ```javascript
@@ -250,9 +256,9 @@ It returns a formatted number string. It uses [Intl.NumberFormat](https://develo
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`amount`|Number|*Required.* Number to be formatted.|
-|`decimals`|Integer|Number of decimals. Defaults to 0.|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `amount` | Number | *Required.* Number to be formatted. |
+| `decimals` | Integer | Number of decimals. Defaults to 0. |
 
 *Examples:*
 ```javascript
@@ -267,9 +273,9 @@ It returns a formatted currency string, always rounded to 2 decimals. It uses [I
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`locale`|String|*Required.* The locale in which the translation is required.|
-|`amount`|Number|*Required.* Money amount to be formatted.|
-|`currency`|String|*Required.* Currency [ISO code](https://www.currency-iso.org/en/home/tables/table-a1.html) (Ej. USD, EUR). It is used to print the currency and choose its symbol ($, €...).|
+| `locale` | String | *Required.* The locale in which the translation is required. |
+| `amount` | Number | *Required.* Money amount to be formatted. |
+| `currency` | String | *Required.* Currency [ISO code](https://www.currency-iso.org/en/home/tables/table-a1.html) (Ej. USD, EUR). It is used to print the currency and choose its symbol ($, €...). |
 
 *Examples:*
 ```javascript
