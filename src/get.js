@@ -25,7 +25,7 @@ function get(locale, key, data) {
 
     if (!isNil(fallbackValue)) return fallbackValue;
 
-    onMissingString({locale, key});
+    if (onMissingString) onMissingString({locale, key});
     return DEFAULT_STRING;
   };
 

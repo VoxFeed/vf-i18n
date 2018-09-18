@@ -1,6 +1,6 @@
 {
   "name": "vf-i18n",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Internationalization utilities used in VoxFeed",
   "main": "src/index.js",
   "scripts": {

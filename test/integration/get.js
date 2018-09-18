@@ -146,4 +146,16 @@ describe('i18n.get', () => {
     expect(onMissingString.callCount).to.be.equal(1);
     expect(onMissingString.firstCall.args).to.be.deep.equal([{locale, key}]);
   });
+
+  it('should do nothing when key does not exist but did not send "onMissingString"', () => {
+    const i18n = new VFi18n({
+      strings: LOCALES,
+      fallbackLocales: [DEFAULT_LOCALE, SOURCE_LOCALE]
+    });
+    const locale = SOURCE_LOCALE;
+    const key = 'NOT_EXISTENT_KEY';
+
+    const string = i18n.get(locale, key);
+    expect(string).to.be.equal('');
+  });
 });

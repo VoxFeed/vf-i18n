@@ -79,7 +79,7 @@ describe('i18n.get', () => {
 
   it('should replace data when string has ICU format', () => {
     const key = 'GREETING';
-    const name = '';
+    const name = 'Chewbacca';
     const data = {name};
 
     const stringEs = get('es', key, data);
@@ -87,6 +87,15 @@ describe('i18n.get', () => {
 
     const stringEn = get('en', key, data);
     expect(stringEn).to.be.equal(`Hello ${name}`);
+  });
+
+  it('should throw error when not sending data', () => {
+    const key = 'GREETING';
+
+    expect(() => {
+      const stringEs = get('es', key);
+      expect(stringEs).to.be.equal('Hola ');
+    }).to.throw(Error);
   });
 
   it('should work with plurals in ICU format', () => {
