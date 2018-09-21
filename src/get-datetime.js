@@ -1,4 +1,5 @@
-const moment = require('moment-timezone');
+const moment = require('moment');
+const momentTz = require('moment-timezone');
 const {getDateTimeLocale, validateFormat} = require('./utils');
 const {DATETIME_FORMATS} = require('./config/formats');
 
@@ -7,7 +8,7 @@ function getTime(locale, dateTime, format, timezone) {
 
   const dateTimeLocale = getDateTimeLocale(locale);
   const dateTimeFormat = DATETIME_FORMATS[format];
-  const timeTz = timezone ? moment(dateTime).tz(timezone) : moment(dateTime);
+  const timeTz = timezone ? moment(momentTz(dateTime).tz(timezone)) : moment(dateTime);
 
   timeTz.locale(dateTimeLocale);
 
