@@ -124,7 +124,7 @@ Returns a localized date string. It uses [Moment Localized formats](https://mome
 const date = new Date(2017, 9, 14);
 
 i18n.getDate('en', date, 'short'); // 10/14/2017
-i18n.getDate('en', date, 'long', 'America/Los_Angeles'); // 14 de octubre de 2017
+i18n.getDate('en', date, 'long', 'America/Los_Angeles'); // October 14, 2017
 ```
 
 
@@ -152,8 +152,8 @@ Returns a localized time string. It uses [Moment Localized formats](https://mome
 ```javascript
 const date = new Date('2017-10-14T18:30:05.000Z');
 
-i18n.getDate('en', date, 'short'); // 6:30:05 PM
-i18n.getDate('en', date, 'long', 'Asia/Tokyo'); // 3:30:05 AM JST
+i18n.getTime('en', date, 'short'); // 6:30:05 PM
+i18n.getTime('en', date, 'long', 'Asia/Tokyo'); // 3:30:05 AM JST
 ```
 
 
@@ -181,8 +181,8 @@ Returns a localized date-time string. It uses [Moment Localized formats](https:/
 ```javascript
 const date = new Date('2017-10-14T18:30:05.000Z');
 
-i18n.getDate('en', date, 'short'); // 6:30:05 PM
-i18n.getDate('en', date, 'long', 'Asia/Tokyo'); // 3:30:05 AM JST
+i18n.getDateTime('en', date, 'short'); // 10/14/2017 6:30 PM
+i18n.getDateTime('en', date, 'long', 'Asia/Tokyo'); // October 14, 2017 6:30 PM
 ```
 
 

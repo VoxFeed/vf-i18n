@@ -1,9 +1,11 @@
 const areIntlLocalesSupported = require('intl-locales-supported');
 
 module.exports = (supportedLocales) => {
-  /*for (const locale of supportedLocales) {
-    require(`moment/locale/${locale}`);
-  }*/
+  for (const locale of supportedLocales) {
+    try {
+      require(`moment/locale/${locale}`);
+    } catch (error) {}
+  }
 
   if (!global.Intl) global.Intl = require('intl');
 

@@ -7,11 +7,11 @@ function getTime(locale, dateTime, format, timezone) {
 
   const dateTimeLocale = getDateTimeLocale(locale);
   const dateTimeFormat = DATETIME_FORMATS[format];
-  const zonedTime = timezone ? moment(dateTime).tz(timezone) : moment(dateTime);
+  const timeTz = timezone ? moment(dateTime).tz(timezone) : moment(dateTime);
 
-  zonedTime.locale(dateTimeLocale);
+  timeTz.locale(dateTimeLocale);
 
-  return zonedTime.format(dateTimeFormat);
+  return timeTz.format(dateTimeFormat);
 }
 
 module.exports = getTime;
