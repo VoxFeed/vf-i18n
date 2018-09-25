@@ -16,7 +16,7 @@ const TIME_FORMATS = {
   short: 'LT',
   medium: 'LTS',
   long: 'LTS',
-  full: 'LTS z'
+  full: 'LTS Z'
 };
 
 module.exports = {

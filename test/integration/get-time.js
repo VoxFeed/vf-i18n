@@ -45,10 +45,10 @@ describe('i18n.getTime', () => {
     const date = moment('2017-10-14T18:30:05.000Z').tz(timezone).toDate();
 
     const string1 = i18n.getTime('es', date, format, timezone);
-    expect(string1).to.be.equal('6:30:05 PM UTC');
+    expect(string1).to.be.equal('6:30:05 PM +00:00');
 
     const string2 = i18n.getTime('en', date, format, timezone);
-    expect(string2).to.be.equal('6:30:05 PM UTC');
+    expect(string2).to.be.equal('6:30:05 PM +00:00');
   });
 
   it('should support timezones', () => {
@@ -57,11 +57,11 @@ describe('i18n.getTime', () => {
     const dateStr = '2017-10-14T18:30:05.000Z';
     const timezone1 = 'America/Mexico_City';
     const date1 = moment(dateStr).tz(timezone1).toDate();
-    const expectedDate1 = '1:30:05 PM CDT';
+    const expectedDate1 = '1:30:05 PM -05:00';
 
     const timezone2 = 'Asia/Tokyo';
     const date2 = moment(dateStr).tz(timezone2).toDate();
-    const expectedDate2 = '3:30:05 AM JST';
+    const expectedDate2 = '3:30:05 AM +09:00';
 
     const string1 = i18n.getTime('en', date1, format, timezone1);
     expect(string1).to.be.equal(expectedDate1);
